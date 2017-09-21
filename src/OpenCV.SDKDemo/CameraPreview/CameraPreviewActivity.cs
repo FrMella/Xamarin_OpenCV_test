@@ -13,8 +13,8 @@ namespace OpenCV.SDKDemo.CameraPreview
 {
     [Activity(Label = ActivityTags.CameraPreview,
         ScreenOrientation=ScreenOrientation.Landscape,
-        ConfigurationChanges=ConfigChanges.KeyboardHidden|ConfigChanges.Orientation
-        //,Theme="@android:style/Theme.NoTitleBar.FullScreen"
+        ConfigurationChanges=ConfigChanges.KeyboardHidden|ConfigChanges.Orientation,
+        Theme= "@android:style/Theme.NoTitleBar.Fullscreen"
         )]
     public class CameraPreviewActivity : Activity, ILoaderCallbackInterface, CameraBridgeViewBase.ICvCameraViewListener
     {
@@ -27,6 +27,7 @@ namespace OpenCV.SDKDemo.CameraPreview
             SetContentView(Resource.Layout.CameraPreview);
             _openCvCameraView = FindViewById<CameraBridgeViewBase>(Resource.Id.surfaceView);
             _openCvCameraView.Visibility = ViewStates.Visible;
+         
             _openCvCameraView.SetCvCameraViewListener(this);
         }
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="OpenCV.SDKDemo.OpenCV.SDKDemo" android:versionCode="1" android:versionName="1.0">
+  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="21" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-feature android:name="android.hardware.camera" android:required="false" />
+  <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+  <uses-feature android:name="android.hardware.camera.front" android:required="false" />
+  <uses-feature android:name="android.hardware.camera.front.autofocus" android:required="false" />
+  <application android:label="OpenCV.SDKDemo" android:name="android.app.Application" android:allowBackup="true" android:icon="@drawable/icon" android:debuggable="true">
+    <activity android:icon="@drawable/icon" android:label="Francisco OpenCV-TensorFlow" android:name="md509ea3d75a1d4c3aa448c6553a28ea8c2.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:label="Puzzle" android:name="md5ab5247d0119f70497ce5bd5c1062ea8e.PuzzleActivity" />
+    <activity android:label="MixedProcessing" android:name="md5156fbfecd0fba21bbd958f612a8a7c6e.MixedProcessingActivity" />
+    <activity android:label="ImageManipulationsActivity" android:name="md53b8dd4203a4c6bd2abc6d04f15e41ecf.ImageManipulationsActivity" />
+    <activity android:label="FaceDetect" android:name="md5908d37ccd8b289e007f6fc84fb1563a0.FaceDetectActivity" />
+    <activity android:configChanges="keyboardHidden|orientation" android:label="ColorBlobDetectionActivity" android:screenOrientation="landscape" android:name="md530346968bbcdb9570d61298668f06fa9.ColorBlobDetectionActivity" />
+    <activity android:configChanges="keyboardHidden|orientation" android:label="CameraPreview" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="md56a82326cf3613e78f478cd0b059b3a72.CameraPreviewActivity" />
+    <activity android:label="CameraControlActivity" android:name="md5a47a348361c97a8caf67714b23e76fb5.CameraControlActivity" />
+    <activity android:label="CameraCalibration" android:name="md5fd462e9eb38aaff48af4c54922600b85.CameraCalibrationActivity" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="OpenCV.SDKDemo.OpenCV.SDKDemo.mono.MonoRuntimeProvider.__mono_init__" />
+    <!--suppress ExportedReceiver-->
+    <receiver android:name="mono.android.Seppuku">
+      <intent-filter>
+        <action android:name="mono.android.intent.action.SEPPUKU" />
+        <category android:name="mono.android.intent.category.SEPPUKU.OpenCV.SDKDemo.OpenCV.SDKDemo" />
+      </intent-filter>
+    </receiver>
+  </application>
+</manifest>

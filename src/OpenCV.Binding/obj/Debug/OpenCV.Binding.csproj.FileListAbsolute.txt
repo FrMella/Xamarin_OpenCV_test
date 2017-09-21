@@ -1,0 +1,6 @@
+E:\Repository\Xamarin android OpenCV\src\OpenCV.Binding\bin\Debug\AnyCPU\OpenCV.dll
+E:\Repository\Xamarin android OpenCV\src\OpenCV.Binding\bin\Debug\AnyCPU\OpenCV.pdb
+E:\Repository\Xamarin android OpenCV\src\OpenCV.Binding\obj\Debug\OpenCV.Binding.csproj.CoreCompileInputs.cache
+E:\Repository\Xamarin android OpenCV\src\OpenCV.Binding\obj\Debug\OpenCV.dll
+E:\Repository\Xamarin android OpenCV\src\OpenCV.Binding\obj\Debug\OpenCV.pdb
+E:\Repository\Xamarin android OpenCV\src\OpenCV.Binding\obj\Debug\OpenCV.Binding.csprojResolveAssemblyReference.cache
