@@ -117,7 +117,7 @@
     <AndroidResource Include="Resources\layout\camera_calibration_surface_view.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Icon.png" />
+    <AndroidResource Include="Resources\drawable\Icon1.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\image_manipulations_surface_view.xml" />
@@ -136,6 +136,7 @@
     <Content Include="MixedProcessing\jni\Android.mk" />
     <Content Include="MixedProcessing\jni\Application.mk" />
     <Content Include="MixedProcessing\jni\jni_part.cpp" />
+    <AndroidResource Include="Resources\drawable\Icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

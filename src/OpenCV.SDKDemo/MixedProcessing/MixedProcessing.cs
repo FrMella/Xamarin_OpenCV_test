@@ -54,7 +54,6 @@ namespace OpenCV.SDKDemo.MixedProcessing
             mLoaderCallback = new Callback(this, this);
             Window.AddFlags(WindowManagerFlags.KeepScreenOn);
             SetContentView(Resource.Layout.tutorial2_surface_view);
-
             mOpenCvCameraView = FindViewById<CameraBridgeViewBase>(Resource.Id.tutorial2_activity_surface_view);
             mOpenCvCameraView.Visibility = ViewStates.Visible;
             mOpenCvCameraView.SetCvCameraViewListener2(this);
@@ -63,10 +62,10 @@ namespace OpenCV.SDKDemo.MixedProcessing
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             Log.Info(TAG, "called onCreateOptionsMenu");
-            mItemPreviewRGBA = menu.Add("Preview RGBA");
-            mItemPreviewGray = menu.Add("Preview GRAY");
-            mItemPreviewCanny = menu.Add("Canny");
-            mItemPreviewFeatures = menu.Add("Find features");
+           // mItemPreviewRGBA = menu.Add("Preview RGBA");
+           // mItemPreviewGray = menu.Add("Preview GRAY");
+           // mItemPreviewCanny = menu.Add("Prueba 1");
+           // mItemPreviewFeatures = menu.Add("Prueba 2");
             return true;
         }
 
@@ -115,6 +114,10 @@ namespace OpenCV.SDKDemo.MixedProcessing
 
         public Mat OnCameraFrame(CameraBridgeViewBase.ICvCameraViewFrame inputFrame)
         {
+          
+            //Core.transpose(mRgba, mRgba);
+            //Core.flip(mRgba, mRgba, 1);
+
             int viewMode = mViewMode;
             switch (viewMode)
             {
@@ -129,8 +132,11 @@ namespace OpenCV.SDKDemo.MixedProcessing
                 case VIEW_MODE_CANNY:
                     // input frame has gray scale format
                     mRgba = inputFrame.Rgba();
+                    mGray = inputFrame.Gray();
                     Imgproc.Canny(inputFrame.Gray(), mIntermediateMat, 80, 100);
                     Imgproc.CvtColor(mIntermediateMat, mRgba, Imgproc.ColorGray2rgba, 4);
+                    FindFeatures(JNIEnv.Handle, JNIEnv.FindClass(typeof(Java.Lang.Object)), mGray.NativeObjAddr, mRgba.NativeObjAddr);
+
                     break;
                 case VIEW_MODE_FEATURES:
                     // input frame has RGBA format
@@ -147,22 +153,24 @@ namespace OpenCV.SDKDemo.MixedProcessing
         {
             Log.Info(TAG, "called onOptionsItemSelected; selected item: " + item);
 
-            if (item == mItemPreviewRGBA)
-            {
-                mViewMode = VIEW_MODE_RGBA;
-            }
-            else if (item == mItemPreviewGray)
-            {
-                mViewMode = VIEW_MODE_GRAY;
-            }
-            else if (item == mItemPreviewCanny)
-            {
-                mViewMode = VIEW_MODE_CANNY;
-            }
-            else if (item == mItemPreviewFeatures)
-            {
-                mViewMode = VIEW_MODE_FEATURES;
-            }
+            //if (item == mItemPreviewRGBA)
+            //{
+            //    mViewMode = VIEW_MODE_RGBA;
+            //}
+            //else if (item == mItemPreviewGray)
+            //{
+            //    mViewMode = VIEW_MODE_GRAY;
+            //}
+            //else if (item == mItemPreviewCanny)
+            //{
+            //    mViewMode = VIEW_MODE_CANNY;
+            //}
+            //else if (item == mItemPreviewFeatures)
+            //{
+            //    mViewMode = VIEW_MODE_FEATURES;
+            //}
+
+            mViewMode = VIEW_MODE_CANNY;
 
             return true;
         }

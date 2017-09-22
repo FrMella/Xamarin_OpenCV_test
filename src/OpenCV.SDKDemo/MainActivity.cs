@@ -12,14 +12,15 @@ using OpenCV.SDKDemo.Puzzle;
 
 namespace OpenCV.SDKDemo
 {
-    [Activity(Label = "Francisco OpenCV-TensorFlow", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "FM CV", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            SetContentView(Resource.Layout.Main);
-            StartActivity(typeof(CameraPreviewActivity));
+            //SetContentView(Resource.Layout.Main);
+            StartActivity(typeof(MixedProcessingActivity));
+            //StartActivity(typeof(CameraPreviewActivity));
 
             //FindViewById<Button>(Resource.Id.mixedProcessing)
             //    .Click += (s, e) => StartActivity(typeof(MixedProcessingActivity));

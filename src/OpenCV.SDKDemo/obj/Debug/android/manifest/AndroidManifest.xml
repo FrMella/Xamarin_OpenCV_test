@@ -7,9 +7,10 @@
   <uses-feature android:name="android.hardware.camera" android:required="false" />
   <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
   <uses-feature android:name="android.hardware.camera.front" android:required="false" />
-  <uses-feature android:name="android.hardware.camera.front.autofocus" android:required="false" />
+  <uses-feature android:name="android.hardware.camera.front.autofocus" android:required="true" />
+  <uses-feature android:screenOrientation="landscape" />
   <application android:label="OpenCV.SDKDemo" android:name="android.app.Application" android:allowBackup="true" android:icon="@drawable/icon" android:debuggable="true">
-    <activity android:icon="@drawable/icon" android:label="Francisco OpenCV-TensorFlow" android:name="md509ea3d75a1d4c3aa448c6553a28ea8c2.MainActivity">
+    <activity android:icon="@drawable/icon" android:label="FM CV" android:name="md509ea3d75a1d4c3aa448c6553a28ea8c2.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
