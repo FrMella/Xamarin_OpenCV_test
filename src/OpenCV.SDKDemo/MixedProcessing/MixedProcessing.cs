@@ -123,11 +123,19 @@ namespace OpenCV.SDKDemo.MixedProcessing
             {
                 case VIEW_MODE_GRAY:
                     // input frame has gray scale format
-                    Imgproc.CvtColor(inputFrame.Gray(), mRgba, Imgproc.ColorGray2rgba, 4);
+                    mRgba = inputFrame.Rgba();
+                    mGray = inputFrame.Gray();
+                    Imgproc.Canny(inputFrame.Gray(), mIntermediateMat, 80, 100);
+                    Imgproc.CvtColor(mIntermediateMat, mRgba, Imgproc.ColorGray2rgba, 4);
+                    FindFeatures(JNIEnv.Handle, JNIEnv.FindClass(typeof(Java.Lang.Object)), mGray.NativeObjAddr, mRgba.NativeObjAddr);
                     break;
                 case VIEW_MODE_RGBA:
                     // input frame has RBGA format
                     mRgba = inputFrame.Rgba();
+                    mGray = inputFrame.Gray();
+                    Imgproc.Canny(inputFrame.Gray(), mIntermediateMat, 80, 100);
+                    Imgproc.CvtColor(mIntermediateMat, mRgba, Imgproc.ColorGray2rgba, 4);
+                    FindFeatures(JNIEnv.Handle, JNIEnv.FindClass(typeof(Java.Lang.Object)), mGray.NativeObjAddr, mRgba.NativeObjAddr);
                     break;
                 case VIEW_MODE_CANNY:
                     // input frame has gray scale format
@@ -142,6 +150,8 @@ namespace OpenCV.SDKDemo.MixedProcessing
                     // input frame has RGBA format
                     mRgba = inputFrame.Rgba();
                     mGray = inputFrame.Gray();
+                    Imgproc.Canny(inputFrame.Gray(), mIntermediateMat, 80, 100);
+                    Imgproc.CvtColor(mIntermediateMat, mRgba, Imgproc.ColorGray2rgba, 4);
                     FindFeatures(JNIEnv.Handle, JNIEnv.FindClass(typeof(Java.Lang.Object)), mGray.NativeObjAddr, mRgba.NativeObjAddr);
                     break;
             }
